@@ -1,0 +1,29 @@
+We'll pass you an array of two numbers. Return the sum of those two numbers and all numbers between them.
+
+The lowest number will not always come first.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+
+Here are some helpful links:
+
+Math.max()
+Math.min()
+Array.prototype.reduce()
+
+function sumAll(arr) {
+  var originalArray = arr;
+  var max = Math.max(...arr);
+  var min = Math.min(...arr);
+  var currentNumber = 0;
+  
+  for(var i = 0; i < max; i++){
+    if(min === (max - 1)){
+      // process the sum of the array
+    }else{
+      arr.push(min+1);
+      return arr;
+    } // end of else
+  } // end of for
+} // end of function
+
+sumAll([1, 4]);
