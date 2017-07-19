@@ -12,7 +12,7 @@ Global String Object
 String.prototype.split()
 Array.prototype.reverse()
 Array.prototype.join()
-
+'code'
 function reverseString(str) {
     var arr = str.split("");
     var rev = arr.reverse();
