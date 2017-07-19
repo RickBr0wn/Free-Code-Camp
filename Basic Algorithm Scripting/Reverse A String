@@ -12,3 +12,13 @@ Global String Object
 String.prototype.split()
 Array.prototype.reverse()
 Array.prototype.join()
+
+function reverseString(str) {
+    var arr = str.split("");
+    var rev = arr.reverse();
+    var answer = rev.join("");
+  return answer;
+}
+
+reverseString("Greetings from Earth");
+
