@@ -1,0 +1,57 @@
+/* Translate the provided string to pig latin.
+
+Pig Latin takes the first consonant (or consonant cluster) of an English word, moves it to the end of the word and suffixes an "ay".
+
+If a word begins with a vowel you just add "way" to the end.
+
+Input strings are guaranteed to be English words in all lowercase.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code.
+
+Here are some helpful links:
+
+Array.prototype.indexOf()
+Array.prototype.push()
+Array.prototype.join()
+String.prototype.substr()
+String.prototype.split()
+*/
+
+function translatePigLatin(str) {
+
+	var splitArray = str.split("");
+  var firstLetter = str.charAt(0);
+  var secondLetter = str.charAt(1);
+	var answer;
+  var removedLetter;
+  
+  if(firstLetter === "a" || firstLetter === "e" || firstLetter === "i" || firstLetter === "o" || firstLetter === "u"){
+  	// starts with a vowel
+    splitArray.push("way");
+    answer = splitArray.join("");
+  	console.log(answer);
+    return answer;
+  }else{
+  	// starts with a constatnant
+    if(secondLetter === "a" || secondLetter === "e" || secondLetter === "i" || secondLetter === "o" || secondLetter === "u"){
+    	// first letter constatnant, second letter vowel
+      removedLetter = splitArray.shift();
+      splitArray.push(removedLetter, "ay");
+      answer = splitArray.join("");
+      console.log(answer);
+      return answer;
+    }else{
+    	// first and second letters constatnant
+      removedLetter = splitArray.shift();
+      var secondRemovedLetter = splitArray.shift();
+      splitArray.push(removedLetter, secondRemovedLetter, "ay");
+      answer = splitArray.join("");
+      console.log(answer);
+      return answer;
+    } // end of inner IF/ELSE statement   
+  } // end of IF/ELSE statement
+} //  end of FUNCTION
+
+translatePigLatin("eight");
+translatePigLatin("paragraphs");
+translatePigLatin("plragraphs");
