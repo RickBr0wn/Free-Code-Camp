@@ -1,0 +1,46 @@
+/* Find the missing letter in the passed letter range and return it.
+
+If all letters are present in the range, return undefined.
+
+Remember to use Read-Search-Ask if you get stuck. Try to pair program. Write your own code. */
+
+function fearNotLetter(str) {
+
+  var splitArray = str.split("");
+  var joinedArray = splitArray.join(", ");
+  var uniCodeArray = [];
+  var arrayLength;
+  var uniCodeNumber;
+  var checkerNumber;
+  var answer;
+
+  // creates an array that holds the uniCode values of letters in 'str'
+  for (var i = 0; i < splitArray.length; i++) {
+    var number = splitArray[i].charCodeAt();
+    uniCodeArray.push(number);
+  } // end of FOR loop on splitArray
+
+  // sets the 'checker' variable to be the first number in 'uniCode' array
+  checkerNumber = uniCodeArray[0];
+
+  // finds the 'missing' number in the sequence
+  for (var x = 0; x < uniCodeArray.length; x++) {
+    while (uniCodeArray[x + 1] === (checkerNumber + 1)) {
+      checkerNumber++;
+    } // end of WHILE loop	
+    console.log(uniCodeNumber);
+    uniCodeNumber = checkerNumber + 1;
+    console.log(uniCodeArray);
+    if (x === uniCodeArray.length && (uniCodeNumber - 1) === uniCodeArray[x]) {
+      answer = (function () { return; })();
+      console.log("end");
+      return answer;
+    } else {
+      answer = String.fromCharCode(uniCodeNumber);
+    }
+  } // end of FOR loop on newArray;
+  console.log(answer);
+  return answer;
+} // end of FUNCTION
+
+fearNotLetter("abc");
