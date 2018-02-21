@@ -1,0 +1,32 @@
+function sumFibs(num) {
+	let fibArr = new Array(1, 1);
+  
+  for(let i = 0; i < num; i++){
+  	let newNum = fibArr[i] + fibArr[i+1];
+    if(newNum > num){
+    	for(let j = 0; j < fibArr.length; j++){
+      	if(fibArr[j]%2 == 0){
+        	fibArr.splice(j, 1);
+        }
+      }
+      let sum = fibArr.reduce(function(a, b){
+          	return a + b;
+          });
+    	console.log(sum);
+  		return sum;
+    }else {
+    	fibArr.push(newNum);
+    }
+  }
+  
+  for(let j = 0; j < fibArr.length; j++){
+  	console.log('loop');
+  }
+  
+  console.log(fibArr);
+  return fibArr;
+}
+
+sumFibs(4);
+
+// sumFibs(4) should return 5.
