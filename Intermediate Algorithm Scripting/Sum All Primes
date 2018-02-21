@@ -1,0 +1,35 @@
+function sumPrimes(num) {
+  let arr = [];
+  let newArr = [];
+  
+	for(let i = 1; i < num+1; i++){
+  	arr.push(i);	
+  }
+  
+  for(let j = 0; j < arr.length; j++){
+  	if(isPrimeNumber(arr[j])){
+ 			newArr.push(arr[j]);
+  	}
+	}
+  
+  let sum = newArr.reduce(function(a, b){
+    return a + b;
+  });
+  
+	console.log(sum);
+  return sum;
+}
+
+function isPrimeNumber(num){
+  let sqrtNum = Math.floor(Math.sqrt(num));
+    let prime = num != 1;
+    for(let i = 2; i < sqrtNum + 1; i++){
+        if(num % i == 0) {
+            prime = false;
+            break;
+        }
+    }
+    return prime;
+}
+
+sumPrimes(10);
