@@ -1,0 +1,10 @@
+// Flatten a nested array. You must account for varying levels of nesting.
+
+function steamrollArray(arr) {
+  // I'm a steamroller, baby
+  return arr.reduce(function(flat, flatArray){
+    return flat.concat(Array.isArray(flatArray) ? steamrollArray(flatArray) : flatArray);
+  }, []);
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);
