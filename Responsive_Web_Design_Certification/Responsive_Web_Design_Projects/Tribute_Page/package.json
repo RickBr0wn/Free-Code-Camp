@@ -1,0 +1,23 @@
+{
+  "name": "tribute_page",
+  "version": "1.0.0",
+  "description": "Part of the Free Code Camp Responsive Web Design Certification",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rick Brown",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.11.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "dependencies": {
+    "eslint-plugin-prettier": "^3.0.1"
+  }
+}

@@ -1,0 +1,42 @@
+.main-grid {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: 12% 44% 44%;
+}
+
+.header-element {
+  grid-column-start: span 3;
+}
+
+.hero-element {
+  grid-column-start: span 3;
+}
+
+.scroll-text-element {
+  grid-column-start: 2;
+  grid-column-end: -1;
+  grid-row-start: 3;
+}
+
+.side-bar-element {
+  background-color: aquamarine;
+  grid-row-start: 3;
+  grid-row-end: 5;
+}
+
+.main-content-element {
+  grid-column-start: 2;
+  grid-column-end: -1;
+  grid-row-start: 4;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
+  text-align: center;
+  align-items: center;
+}
+
+.footer-element {
+  grid-column-start: span 3;
+  grid-row-start: 5;
+}

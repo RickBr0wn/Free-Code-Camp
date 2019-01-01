@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- Link to external files -->
+    <link rel="stylesheet" href="./assets/css/structure.css" />
+    <link rel="stylesheet" href="./assets/css/main-grid.css" />
+    <link rel="stylesheet" href="./assets/css/header.css" />
+    <link rel="stylesheet" href="./assets/css/hero-image.css" />
+    <link rel="stylesheet" href="./assets/css/scroll-text.css" />
+    <link rel="stylesheet" href="./assets/css/main-content-grid.css" />
+    <link rel="stylesheet" href="./assets/css/footer-element.css" />
+    <!-- CDN's to go here -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton|Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <!-- End of CDN's-->
+    <title>FCC Tribute - John Lennon</title>
+  </head>
+
+  <body onload="loop()">
+    <!-- FCC Test Suite CDN -->
+    <!-- Must be placed within the <body> -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <!-- The Actual body -->
+    <div id="main" class="main-grid">
+      <div class="header-element">
+        <div class="header">
+          <div class="branding">
+            <a href="#"><i class="fab fa-github"></i> Rick Brown</a>
+          </div>
+          <div class="site-title" id="title">
+            <a href="#"
+              >John Lennon Tribute Website - Created as part of the Free Code
+              Camp Front End Development Certification</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-element">
+        <div class="hero-image" id="img-div">
+          <img
+            src="./assets/img/johnBanner.png"
+            alt="John smoking a cigarette"
+            id="image"
+          />
+          <div class="hero-text" id="img-caption">
+            <h2>John</h2>
+            <h1>Lennon</h1>
+            <h3><p>Singer, Song-Writer & Activist</p></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-text-element"><div id="scroll-text"></div></div>
+
+      <div class="side-bar-element"><h1>YOU-TUBE STUFF GOES HERE!!</h1></div>
+
+      <div class="main-content-element">
+        <div class="main-content-panel-1">
+          <p>
+            John Ono Lennon, born John Winston Lennon was an English musician,
+            singer and songwriter who rose to worldwide fame as a founder member
+            of the rock band the Beatles, whom were the most commercially
+            successful band in the history of popular music. Together with Paul
+            McCartney, he formed a song-writing partnership that is one of the
+            most celebrated of the 20th century.
+          </p>
+        </div>
+        <div class="main-content-panel-2">
+          <img
+            src="https://media.vam.ac.uk/media/thira/collection_images/2006AX/2006AX5760.jpg"
+            alt="John Lennon & Paul McCartney"
+          />
+        </div>
+        <div class="main-content-panel-3">
+          <img
+            src="https://cdn.idntimes.com/content-images/community/2017/02/john-lennon-yoko-ono3-c130fc555d8f8282091125ddc88e0fe4.jpg"
+            alt="John Lennon & Yoko Ono"
+          />
+        </div>
+        <div class="main-content-panel-4">
+          <p>
+            Born and raised in Liverpool, as a teenager Lennon became involved
+            in the skiffle craze; his first band, the Quarrymen, evolved into
+            the Beatles in 1960. When the group disbanded in 1970, Lennon
+            embarked on a solo career that produced the critically acclaimed
+            albums 'John Lennon/Plastic Ono Band' and 'Imagine', and iconic
+            songs such as 'Give Peace a Chance' and 'Working Class Hero'. After
+            his marriage to Yoko Ono in 1969, he changed his name to John Ono
+            Lennon. Lennon disengaged himself from the music business in 1975 to
+            raise his infant son Sean, but re-emerged with Ono in 1980 with the
+            new album Double Fantasy. He was murdered three weeks after its
+            release.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-element">
+        <footer>
+          <a href="#"><i class="fab fa-github"></i> Rick Brown : 2018</a>
+        </footer>
+      </div>
+    </div>
+
+    <script src="./assets/js/facts.js"></script>
+    <script src="./assets/js/scroller.js"></script>
+  </body>
+</html>

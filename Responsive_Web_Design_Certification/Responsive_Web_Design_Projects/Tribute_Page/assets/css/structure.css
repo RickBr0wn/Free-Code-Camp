@@ -1,0 +1,55 @@
+/* 
+  0-600px        : Phone
+  600-900px      : Tablet portrait
+  900-1200px     : Tablet landscape
+  [1200-1800px]  : normal styles apply
+  1800+px        : Large screen  
+$brakepoint argument choices:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desk
+  ** ORDER OF MEDIA QUERIES: Base + Typography > general layout + grid > page layout > components **
+*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
+
+body {
+  font-weight: 400;
+  color: #777;
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

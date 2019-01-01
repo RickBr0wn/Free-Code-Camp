@@ -1,0 +1,31 @@
+.main-content-panel-1 {
+  grid-column-start: 1;
+  padding: 5rem;
+}
+
+.main-content-panel-2 {
+  grid-column-start: 2;
+  padding: 5rem;
+}
+
+.main-content-panel-3 {
+  grid-column-start: 1;
+  padding: 5rem;
+}
+
+.main-content-panel-4 {
+  grid-column-start: 2;
+  padding: 5rem;
+}
+
+.main-content-element p {
+  font-size: 1.8rem;
+}
+
+.main-content-element img {
+  height: 50rem;
+}
+
+.main-content-element {
+  padding: 2rem 12rem;
+}
