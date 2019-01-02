@@ -1,13 +1,10 @@
-// Return an English translated sentence of the passed binary string.
-// The binary string will be space separated.
-
 /**
 * A method that returns an English translated sentence of the passed binary string.
 * The binary string will be space separated.
 * @param `string` - The binary string
 * @returns `string` - The English translation
 */
-const binaryAgent = str => {
+export const binaryAgent = str => {
   let arr = new Array()
   
   str.split(' ').forEach(function(element){
