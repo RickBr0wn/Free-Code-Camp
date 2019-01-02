@@ -10,30 +10,19 @@
 * @param `array` - An array of objects
 * @returns `array` - An array of objects, conatining the Orbital Period
 */
-// const orbitalPeriod = arr => {
-//   var GM = 398600.4418
-//   var earthRadius = 6367.4447
-//   let alt = 35873.5553
-//   let answer = 0
-//   var oPeriod2 = Math.ceil(((2*Math.PI) * totalRadius) / (Math.sqrt(GM / (earthRadius + satelliteAlt)))) //?
-//   return answer
-// }
-
-function orbitalPeriod(satellites) {
-  var GM = 398600.4418;
-  var earthRadius = 6367.4447;
-  return satellites.map(function(data, i, arr) {
-    var satelliteAlt = arr[i].avgAlt;
-    var totalRadius = earthRadius + satelliteAlt;
-    var orbitalV = Math.sqrt(GM / totalRadius);
-    var oPeriod = Math.round(((2 * Math.PI) * totalRadius) / orbitalV);
-    arr[i].velocity = orbitalV.toFixed(4);
-    arr[i].orbitalPeriod = oPeriod;
+export const orbitalPeriod = satellites => {
+  const GM = 398600.4418
+  const earthRadius = 6367.4447
+  return satellites.map(dataItem => {
+    const { name, avgAlt } = dataItem
+    const totalRadius = earthRadius + avgAlt
+    const orbitalV = Math.sqrt(GM / totalRadius)
+    const orbitalPeriod = Math.round(((2 * Math.PI) * totalRadius) / orbitalV)
     return {
-      name: data.name,
-      orbitalPeriod: data.orbitalPeriod
-    };
-  });
+      name,
+      orbitalPeriod
+    }
+  })
 }
 
 // Expects [{name: "sputnik", orbitalPeriod: 86400}]
