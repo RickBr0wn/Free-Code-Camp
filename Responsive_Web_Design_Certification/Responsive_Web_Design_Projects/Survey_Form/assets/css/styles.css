@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+body {
+  background: #B2CEDE;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: #222;
+  font-family: 'Raleway', sans-serif;
+}
+
+.container {
+  background: #ddd;
+  margin-top: 50px;
+  padding: 25px 50px;
+}
+
+#survey-form {
+  margin-top: 25px;
+}
+
+.item {
+  margin: 12px;
+}
