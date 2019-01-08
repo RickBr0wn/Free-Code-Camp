@@ -1,42 +1,138 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; 
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; 
+}
 
 body {
-  background: #b2cede;
   height: 100vh;
+  width: 100vw;
   margin: 0 auto;
-  color: #222;
   font-family: 'Raleway', sans-serif;
-}
-
-.container {
-  margin: 0 auto;
-  background: #eee;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 25px 50px;
-  filter: drop-shadow(0 0 0.75rem rgba(51, 51, 51, 0.3));
-  border-radius: 5px;
-  width: 500px;
-}
-
-.title-container {
-  text-align: center;
-}
-
-.title-container h1 {
-  font-size: 2.6rem;
-}
-
-a {
-  text-decoration: none;
-  color: #333;
-}
-
-#description {
   font-size: 1.6rem;
-  font-weight: 700;
-  margin: 0 auto;
-  width: 80%;
-  text-align: center;
-  margin-bottom: 2rem;
 }
+
+.red {
+  background-color: red;
+  font-size: 20px;
+  padding: 20px;
+  color: #fff;
+}
+
+.grid {
+  margin: auto;
+  display: grid;
+  grid-template-rows: repeat(15, 10rem);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.nav-bar {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; 
+  z-index: 2;
+  background: #fff;
+  position: fixed;
+  width: 100vw;
+  padding: 2rem;
+}
+
+#brand-logo {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+}
+
+li {
+  list-style-type: none;
+  padding: 0 3rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.main-content {
+  grid-row: 2 / 7;
+  grid-column: 1 / -1;
+}
+
+.main-content img {
+  width: 100%;
+  margin-top: -30rem;
+  z-index: -2;
+}
+
+.call-to-action-container {
+  position: absolute;
+  left: 25vw;
+  top: 35%;
+  transform: translate(0%, -50%);
+  padding: 4rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+}
+
+.call-to-action-container h1 {
+  font-size: 7rem;
+  font-weight: 700;
+}
+
+.call-to-action-container button {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 1rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.small-box-1 {
+  grid-row: 7 / 10;
+  grid-column: 1 / 2;
+}
+
+.small-box-2 {
+  grid-row: 7 / 10;
+  grid-column: 2 / 3;
+}
+
+.small-box-3 {
+  grid-row: 7 / 10;
+  grid-column: 3 / 4;
+}
+
+.small-box-4 {
+  grid-row: 7 / 10;
+  grid-column: 4 / 5;
+}
+
+.side-nav {
+  grid-row: 2/ 8;
+  grid-column: 4/ 5;
+}
+
+.secondary-content {
+  grid-row: 10 / 15;
+  grid-column: 1 / -1;
+}
+
+.footer {
+  grid-row: 15 / 16;
+  grid-column: 1 / -1;
+}
+
