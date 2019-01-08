@@ -1,24 +1,74 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
 
 body {
-  background: #B2CEDE;
+  background: #b2cede;
   height: 100vh;
-  display: flex;
-  justify-content: center;
+  margin: 0 auto;
   color: #222;
   font-family: 'Raleway', sans-serif;
 }
 
 .container {
-  background: #ddd;
+  margin: 0 auto;
+  background: #eee;
   margin-top: 50px;
+  margin-bottom: 50px;
   padding: 25px 50px;
+  filter: drop-shadow(0 0 0.75rem rgba(51, 51, 51, 0.3));
+  border-radius: 5px;
+  width: 500px;
 }
 
-#survey-form {
-  margin-top: 25px;
+.title-container {
+  text-align: center;
+}
+
+.title-container h1 {
+  font-size: 2.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+#description {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .item {
-  margin: 12px;
+  border: 1px solid rgba(51, 51, 51, 0.3);
+  padding: 1rem;
+  margin-bottom: 5px;
+  border-radius: 3px;
+  position: relative;
+}
+
+#personal-details {
+  position: absolute;
+  top: -10px;
+  background: #eee;
+}
+
+.input-boxes {
+  width: 200px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: rgb(19, 82, 219);
+  border: none;
+  border-radius: 5px;
 }

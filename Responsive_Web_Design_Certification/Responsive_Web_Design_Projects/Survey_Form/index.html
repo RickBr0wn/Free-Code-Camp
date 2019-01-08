@@ -18,7 +18,7 @@
       rel="stylesheet"
     />
     <!-- End of CDN's-->
-    <title>FCC Tribute - John Lennon</title>
+    <title>FCC - Survey Form</title>
   </head>
   <body>
     <!-- FCC Test Suite CDN -->
@@ -26,17 +26,78 @@
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <!-- The Actual body -->
     <div>
-      <h1 id="title">Survey Form</h1>
+      <div class="title-container">
+        <h1 id="title">Responsive Web Design Projects - Build a Survey Form</h1>
+        <a href="#">
+          <h3 class="hookline">https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-survey-form</h3>
+        </a>
+      </div>
       <div class="container">
         <p id="description">Let us know how we can improve Free Code Camp</p>
         <form id="survey-form">
           <div class="item">
-            Name:<input type="text" id="name" required>
+            <label id="personal-details" for="name">Please Enter Your Details</label>
+            <div class="item">
+              <label id="name-label" for="name">Name: </label>
+              <input type="text" id="name" class="input-boxes" placeholder=" Please enter your name" required>
+            </div>
+            <div class="item">
+              <label id="email-label" for="email">Email: </label>
+              <input type="email" id="email" class="input-boxes" placeholder=" Please enter your email address" required>
+            </div>
+            <div class="item">
+              <label id="number-label" for="age">Age: </label>
+              <input type="number" id="number" class="input-boxes" placeholder=" Please enter your age" min="16" max="100" required>
+            </div>
           </div>
           <div class="item">
-            Email:<input type="email" id="email" required>
+            <label>Which option best describes your current role?</label>
+            <select id="dropdown">
+              <option value="student" name="current-role">Student</option>
+              <option value="full-job" name="current-role">Full Time job</option>
+              <option value="full-learner" name="current-role">Full Time Learner</option>
+              <option value="prefer-no" name="current-role">Prefer Not To Say</option>
+              <option value="other" name="current-role">Other</option>
+            </select>
           </div>
-          <input type="submit">submit</input>
+          <div class="item">
+            <label for="recommend" id="recommend-label">* How likely is that you would recommend freeCodeCamp to a friend?</label></br>
+          </br>
+            <input type="radio" id="definitely" name="recommend" value="Definitely">Definitely</br>
+            <input type="radio" id="maybe" name="recommend" value="Maybe">Maybe</br>
+            <input type="radio" id="not-sure" name="recommend" value="Not-sure">Not sure</br>
+          </div>
+          <div class="item">
+            <label>Which option best describes your current role?</label>
+            <select id="dropdown">
+              <option value="challenges" name="like-most">Challenges</option>
+              <option value="projects" name="like-most">Projects</option>
+              <option value="community" name="like-most">Community</option>
+              <option value="open-source" name="like-most">Open Source</option>
+            </select>
+          </div>
+          <div class="item">
+            <div class="item">
+              <label for="like-most" id="like-most-label">What do you like most in FCC:</label></br></br>
+              <input type="checkbox" id="front-end" name="improvements" value="front-end">Front-End Projects</br>
+              <input type="checkbox" id="back-end" name="improvements" value="back-end">Back-End Projects</br>
+              <input type="checkbox" id="data" name="improvements" value="data">Data Visualization</br>
+              <input type="checkbox" id="challenges" name="improvements" value="challenges">Challenges</br>
+              <input type="checkbox" id="open-source-community" name="improvements" value="open-source-community">Open Source Challenges</br>
+              <input type="checkbox" id="gitter" name="improvements" value="gitter">Gitter help rooms</br>
+              <input type="checkbox" id="videos" name="improvements" value="videos">Videos</br>
+              <input type="checkbox" id="wiki" name="improvements" value="wiki">Wiki</br>
+              <input type="checkbox" id="forum" name="improvements" value="forum">Fourms</br>
+              <input type="checkbox" id="additional" name="improvements" value="additional">Additional Courses</br>
+            </div>
+          </div>
+          <div class="item">
+            <label for="text-area">Any Comments or Suggestions?</label>
+            <textarea name="text-area" rows="4" cols="50"></textarea>
+          </div>
+          <div class="button-container">
+            <button id="submit" type="submit" value="submit">Submit</button>
+          </div>     
         </form>
       </div>
     </div>
