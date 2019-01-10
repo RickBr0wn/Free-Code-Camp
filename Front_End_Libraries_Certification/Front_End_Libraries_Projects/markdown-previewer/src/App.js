@@ -2,7 +2,7 @@
 |--------------------------------------------------
 | TODO: 
 |   Implement a feature to allow markdown to be converted to HTML
-|   Using:  <p>{marked(markdown)}</p>
+|   Using: {marked(markdown)}
 |--------------------------------------------------
 */
 
