@@ -1,8 +1,12 @@
 /**
 |--------------------------------------------------
 | TODO: 
+|   Include any requirements from FCC tst suite
+|   This version has NOT been tested
+|
 |   Implement a feature to allow markdown to be converted to HTML
 |   Using: {marked(markdown)}
+|   ** Not required for project completion
 |--------------------------------------------------
 */
 
