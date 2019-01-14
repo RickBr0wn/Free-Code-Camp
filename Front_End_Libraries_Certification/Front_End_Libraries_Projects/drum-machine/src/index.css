@@ -5,20 +5,54 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit; 
+  box-sizing: inherit;
 }
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; 
+  font-size: 62.5%;
 }
-  
+
 body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1.6rem;
-  background-color: #ECEFF1;
+  font-size: 1.2rem;
+  background-color: #333;
+  color: #eee;
+}
+
+.instrument-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 105rem;
+  grid-gap: 2px;
+  display: flex;
+}
+
+.instrument {
+  min-width: 10rem;
+  max-width: 10rem;
+  height: 10rem;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 2px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 0, 0.5);
+}
+
+.instrument-text {
+  color: #eee;
+}
+
+.keyboard-letter {
+  color: yellow;
+  font-size: 3.4rem;
 }

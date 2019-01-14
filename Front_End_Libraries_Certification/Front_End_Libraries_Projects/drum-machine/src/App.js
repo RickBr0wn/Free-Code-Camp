@@ -1,9 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import InstrumentList from './InstrumentList'
 
-class App extends Component {
-  render() {
-    return <div>Drum Machine</div>
-  }
+export const App = () => {
+  return (
+    <div className="instrument-list">
+      <InstrumentList />
+    </div>
+  )
 }
 
 export default App
