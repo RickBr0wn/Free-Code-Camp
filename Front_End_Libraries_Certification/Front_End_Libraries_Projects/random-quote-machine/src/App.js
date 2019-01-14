@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { END_POINT } from './constants'
+import { URL, backgroundColors, fontColors } from './constants'
 
 export class App extends Component {
   constructor() {
@@ -7,52 +7,8 @@ export class App extends Component {
     this.state = {
       quotes: [],
       hasQuotes: false,
-      backgroundColors: [
-        '#A7BED3',
-        '#C6E2E9',
-        '#F1FFC4',
-        '#FFCAAF',
-        '#DAB894',
-        '#DCEDB9',
-        '#CBD081',
-        '#918868',
-        '#3A405A',
-        '#F9DEC9',
-        '#99B2DD',
-        '#E9AFA3',
-        '#685044',
-        '#474A2C',
-        '#636940',
-        '#59A96A',
-        '#B4E7CE',
-        '#A0ECD0',
-        '#94DDBC',
-        '#714955',
-        '#B4E7CE',
-      ],
-      fontColors: [
-        '#000',
-        '#000',
-        '#000',
-        '#000',
-        '#000',
-        '#000',
-        '#000',
-        '#fff',
-        '#fff',
-        '#000',
-        '#000',
-        '#000',
-        '#fff',
-        '#fff',
-        '#fff',
-        '#fff',
-        '#000',
-        '#000',
-        '#000',
-        '#fff',
-        '#000',
-      ],
+      backgroundColors,
+      fontColors,
       currentQuote: null,
       currentAuthor: null,
       currentBackgroundColor: '#59A96A',
@@ -61,19 +17,19 @@ export class App extends Component {
   }
 
   fetchQuoteData = () => {
-    fetch(END_POINT)
+    fetch(URL)
       .then(response => response.json())
       .then(parsedJSON => {
         const { backgroundColors, fontColors } = this.state
-        const quoteIndex = this.randomIndex(parsedJSON.quotes.length)
-        const colorIndex = this.randomIndex(backgroundColors.length)
+        const quote = this.randomIndex(parsedJSON.quotes.length)
+        const color = this.randomIndex(backgroundColors.length)
         this.setState({
           quotes: parsedJSON.quotes,
           hasQuotes: true,
-          currentQuote: parsedJSON.quotes[quoteIndex].quote,
-          currentAuthor: parsedJSON.quotes[quoteIndex].author,
-          currentBackgroundColor: backgroundColors[colorIndex],
-          currentFontColor: fontColors[colorIndex],
+          currentQuote: parsedJSON.quotes[quote].quote,
+          currentAuthor: parsedJSON.quotes[quote].author,
+          currentBackgroundColor: backgroundColors[color],
+          currentFontColor: fontColors[color],
         })
       })
       .catch(error => console.log(error))
@@ -85,7 +41,6 @@ export class App extends Component {
     const { quotes, backgroundColors, fontColors } = this.state
     const quotesIndex = this.randomIndex(quotes.length)
     const colorsIndex = this.randomIndex(backgroundColors.length)
-    console.log(quotesIndex)
     this.setState({
       ...this.state,
       currentQuote: quotes[quotesIndex].quote,
@@ -96,9 +51,14 @@ export class App extends Component {
   }
 
   tweetQuote = currentQuote => {
-      const url = 'https://github.com/RickBr0wn'
-      window.open('http://twitter.com/share?url=' + encodeURIComponent(url) + '&text=' + encodeURIComponent(currentQuote))
-    }
+    const url = 'https://github.com/RickBr0wn'
+    window.open(
+      'http://twitter.com/share?url=' +
+        encodeURIComponent(url) +
+        '&text=' +
+        encodeURIComponent(currentQuote)
+    )
+  }
 
   componentWillMount() {
     this.fetchQuoteData()
@@ -133,7 +93,7 @@ export class App extends Component {
                 maxWidth: '60rem',
                 padding: '5rem',
                 borderRadius: '5px',
-                marginBottom: '-3rem'
+                marginBottom: '-3rem',
               }}>
               <div
                 className="quote"
@@ -155,18 +115,20 @@ export class App extends Component {
                 {currentAuthor}
               </div>
             </div>
-            <div style={{ 
-              width: '10rem', 
-              color: currentFontColor, 
-              display: 'flex', 
-              justifyContent: 'space-around', 
-              fontSize: '2rem' 
+            <div
+              style={{
+                width: '10rem',
+                color: currentFontColor,
+                display: 'flex',
+                justifyContent: 'space-around',
+                fontSize: '2rem',
               }}>
               <div id="new-quote" onClick={() => this.generateNewQuote()}>
                 <i class="fas fa-sync-alt" />
               </div>
-              <div id="tweet-quote" onClick={() => this.tweetQuote(currentQuote,
-      currentAuthor)}>
+              <div
+                id="tweet-quote"
+                onClick={() => this.tweetQuote(currentQuote, currentAuthor)}>
                 <i class="fab fa-twitter" />
               </div>
             </div>

@@ -1,1 +1,50 @@
-export const END_POINT = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
+export const URL =
+  'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
+
+export const backgroundColors = [
+  '#A7BED3',
+  '#C6E2E9',
+  '#F1FFC4',
+  '#FFCAAF',
+  '#DAB894',
+  '#DCEDB9',
+  '#CBD081',
+  '#918868',
+  '#3A405A',
+  '#F9DEC9',
+  '#99B2DD',
+  '#E9AFA3',
+  '#685044',
+  '#474A2C',
+  '#636940',
+  '#59A96A',
+  '#B4E7CE',
+  '#A0ECD0',
+  '#94DDBC',
+  '#714955',
+  '#B4E7CE',
+]
+
+export const fontColors = [
+  '#000',
+  '#000',
+  '#000',
+  '#000',
+  '#000',
+  '#000',
+  '#000',
+  '#fff',
+  '#fff',
+  '#000',
+  '#000',
+  '#000',
+  '#fff',
+  '#fff',
+  '#fff',
+  '#fff',
+  '#000',
+  '#000',
+  '#000',
+  '#fff',
+  '#000',
+]
