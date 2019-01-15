@@ -72,64 +72,62 @@ export class App extends Component {
       currentBackgroundColor,
       currentFontColor,
     } = this.state
+
+    const stylesObj = {
+      container: {
+        background: currentBackgroundColor,
+        color: currentFontColor,
+        height: '100vh',
+        width: '100vw',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+      },
+      quoteBox: {
+        maxWidth: '60rem',
+        padding: '5rem',
+        borderRadius: '5px',
+        marginBottom: '-3rem',
+      },
+      quoteText: {
+        fontSize: '4.8rem',
+        fontFamily: '"Bellefair", serif',
+      },
+      quoteAuthor: {
+        textAlign: 'right',
+        fontSize: '2rem',
+        marginTop: '0.5rem',
+      },
+      buttonContainer: {
+        width: '10rem',
+        color: currentFontColor,
+        display: 'flex',
+        justifyContent: 'space-around',
+        fontSize: '2rem',
+      },
+    }
+
     return (
       <div>
         {hasQuotes && (
-          <div
-            style={{
-              background: currentBackgroundColor,
-              color: currentFontColor,
-              height: '100vh',
-              width: '100vw',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              flexDirection: 'column',
-            }}>
-            <div
-              className="card"
-              id="quote-box"
-              style={{
-                maxWidth: '60rem',
-                padding: '5rem',
-                borderRadius: '5px',
-                marginBottom: '-3rem',
-              }}>
-              <div
-                className="quote"
-                id="text"
-                style={{
-                  fontSize: '4.8rem',
-                  fontFamily: '"Bellefair", serif',
-                }}>
+          <div style={stylesObj.container}>
+            <div id="quote-box" style={stylesObj.quoteBox}>
+              <div id="text" style={stylesObj.quoteText}>
                 {currentQuote}
               </div>
-              <div
-                className="author"
-                id="author"
-                style={{
-                  textAlign: 'right',
-                  fontSize: '2rem',
-                  marginTop: '0.5rem',
-                }}>
+              <div id="author" style={stylesObj.quoteAuthor}>
                 {currentAuthor}
               </div>
             </div>
-            <div
-              style={{
-                width: '10rem',
-                color: currentFontColor,
-                display: 'flex',
-                justifyContent: 'space-around',
-                fontSize: '2rem',
-              }}>
+            <div style={stylesObj.buttonContainer}>
               <div id="new-quote" onClick={() => this.generateNewQuote()}>
-                <i class="fas fa-sync-alt" />
+                <i className="fas fa-sync-alt" />
               </div>
               <div
                 id="tweet-quote"
                 onClick={() => this.tweetQuote(currentQuote, currentAuthor)}>
-                <i class="fab fa-twitter" />
+                <i className="fab fa-twitter" />
               </div>
             </div>
           </div>
