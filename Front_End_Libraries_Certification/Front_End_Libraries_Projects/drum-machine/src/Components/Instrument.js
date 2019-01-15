@@ -1,12 +1,7 @@
 import React from 'react'
 
 export const Instrument = props => {
-  const onPlay = sound => {
-    const onSound = new Audio(sound)
-    onSound.play()
-  }
-
-  const { instrument } = props
+  const { instrument, onPlay } = props
   const instrumentObj = instrument[Object.keys(instrument)]
   const { sound, name, id, letter } = instrumentObj
 
