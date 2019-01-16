@@ -1,6 +1,6 @@
 /**
  * A function to compare two arrays. It will return a new array with any of the items only found in one of the two given arrays, but not both.
- * In othre words, it return the symmetric difference of the two arrays.
+ * In other words, it returns the symmetric difference of the two arrays.
  * @param `array` - The first array to be checked
  * @param `array` - The second array to be checked
  * @returns `array` - A new array containing the symmetric difference of the two arrays
