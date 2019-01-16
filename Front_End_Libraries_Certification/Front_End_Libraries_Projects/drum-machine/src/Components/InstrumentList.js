@@ -8,7 +8,7 @@ import { instruments } from './instruments'
 export class InstrumentList extends Component {
   constructor() {
     super()
-    this.state = { instruments }
+    this.state = { instruments, power: false }
   }
 
   onPlay = sound => {
@@ -37,7 +37,6 @@ export class InstrumentList extends Component {
     return this.state.instruments.map((instrument, index) => (
       <div key={index}>
         <Instrument instrument={instrument} onPlay={this.onPlay} />
-        
       </div>
     ))
   }
