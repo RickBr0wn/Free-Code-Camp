@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import Instrument from './Instrument'
 import { instruments } from './instruments'
-
-
-// Q:81 W:87 E:69 R:82 T:84 Y:89 U:85 I:73 O:79
+import Buttons from './Buttons'
+import '../buttons.css'
 
 export class InstrumentList extends Component {
   constructor() {
@@ -33,12 +32,30 @@ export class InstrumentList extends Component {
     document.addEventListener('keydown', this.handleKeyDown)
   }
 
+  handlePower = () => {
+    this.setState({ ...this.state, power: !this.state.power })
+  }
+
   render() {
-    return this.state.instruments.map((instrument, index) => (
-      <div key={index}>
-        <Instrument instrument={instrument} onPlay={this.onPlay} />
+    const power = this.state.power
+    return (
+      <div>
+        <div className="instrument-list">
+          {this.state.instruments.map((instrument, index) => (
+            <div key={index}>
+              <Instrument
+                instrument={instrument}
+                onPlay={this.onPlay}
+                power={power}
+              />
+            </div>
+          ))}
+        </div>
+        <div>
+          <Buttons power={power} handlePower={this.handlePower} />
+        </div>
       </div>
-    ))
+    )
   }
 }
 

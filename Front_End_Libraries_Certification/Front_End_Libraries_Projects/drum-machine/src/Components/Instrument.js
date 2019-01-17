@@ -1,16 +1,23 @@
 import React from 'react'
 
 export const Instrument = props => {
-  const { instrument, onPlay } = props
+  const { instrument, onPlay, power } = props
   const instrumentObj = instrument[Object.keys(instrument)]
   const { sound, name, id, letter } = instrumentObj
-
-  return <div key={id} className="instrument power-on" onClick={() => onPlay(sound)}>
+  return (
+    <div
+      key={id}
+      className={`instrument ${power ? 'power-on' : null}`}
+      onClick={power ? () => onPlay(sound) : null}
+    >
       <div>
-        <kbd className="keyboard-letter letter-power-on">{letter}</kbd>
+        <kbd className={`keyboard-letter ${power ? 'letter-power-on' : null}`}>
+          {letter}
+        </kbd>
       </div>
       <div className="instrument-text">{name}</div>
     </div>
+  )
 }
 
 export default Instrument

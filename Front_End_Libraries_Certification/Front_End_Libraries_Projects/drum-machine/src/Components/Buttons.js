@@ -1,31 +1,19 @@
 import React from 'react'
 
-const Buttons = () => {
-  return <div>
-      <ul>
-        <li>
-          <label>
-            <input type="checkbox" name="" />
-            <i class="fas fa-power-off" />
-            <span class="check" />
-          </label>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox" name="" />
-            <div className="keyboard-letter">#1</div>
-            <span class="check" />
-          </label>
-        </li>
-        <li>
-          <label>
-            <input type="checkbox" name="" />
-          <div className="keyboard-letter letter-power-on">#2</div>
-            <span class="check" />
-          </label>
-        </li>
-      </ul>
+const Buttons = ({ power, handlePower }) => {
+  return (
+    <div className="button-container">
+      <div className="">
+        <i
+          className={`fas fa-power-off icon ${
+            power ? 'letter-power-on' : null
+          }`}
+        />
+        <div className="power-button" onClick={() => handlePower()} />
+        <div className={`power-button-dot ${power ? 'dot-power' : null}`} />
+      </div>
     </div>
+  )
 }
 
 export default Buttons

@@ -23,7 +23,6 @@ body {
   background-color: #111;
   color: #eee;
   height: 100vh;
-  transition: all 0.5s;
 }
 
 .instrument-list {
@@ -47,32 +46,84 @@ body {
   margin: 1.2rem;
   border-radius: 50%;
   border: 1px solid #333;
-  box-shadow: 0 0 5px #333, 
-              0 0 10px #333
-              0 0 15px #333, 
-              0 0 20px #333,
-              0 0 0 1px rgba(0, 176, 255, 0.1);
+  box-shadow: 0 0 5px #333, 0 0 10px #333 0 0 15px #333, 0 0 20px #333,
+    0 0 0 1px rgba(0, 176, 255, 0.1);
+  transition: all 0.5s;
 }
 
 .instrument-text {
-  color: #eee;
+  color: #afafaf;
 }
 
 .keyboard-letter {
+  transition: all 0.5s;
   color: #222;
   font-size: 3.4rem;
   font-weight: 700;
 }
 
 .letter-power-on {
-  color: rgba(0, 176, 255, 1);
+  color: rgba(0, 176, 255, 1) !important;
+  transition: all 0.5s;
 }
 
 .power-on {
   border: 1px solid rgba(0, 176, 255, 1);
-  box-shadow: 0 0 5px rgba(0, 176, 255, 1), 
-              0 0 10px rgba(0, 176, 255, 1),
-              0 0 15px rgba(0, 176, 255, 1), 
-              0 0 20px rgba(0, 176, 255, 1),
-              0 0 0 1px rgba(0, 176, 255, 0.1);
+  box-shadow: 0 0 5px rgba(0, 176, 255, 1), 0 0 10px rgba(0, 176, 255, 1),
+    0 0 15px rgba(0, 176, 255, 1), 0 0 20px rgba(0, 176, 255, 1),
+    0 0 0 1px rgba(0, 176, 255, 0.1);
+}
+
+.power-button {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#000, #333);
+  border-radius: 50%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.power-button-dot {
+  content: '';
+  position: relative;
+  top: -34px;
+  left: 197px;
+  height: 6px;
+  width: 6px;
+  background: #1b1b1b;
+  border-radius: 50%;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.dot-power {
+  background: rgba(0, 176, 255, 1);
+}
+
+.power-button::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: #222;
+  border-radius: 50%;
+  z-index: 2;
+  border: 2px solid #161616;
+}
+
+.button-container {
+  margin-top: 2rem;
+}
+
+.icon {
+  position: relative;
+  left: 188px;
+  font-size: 2.4rem;
+  color: #1b1b1b;
 }
