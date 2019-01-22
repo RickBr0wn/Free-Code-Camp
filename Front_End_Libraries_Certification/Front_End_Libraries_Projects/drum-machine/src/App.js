@@ -3,7 +3,7 @@ import InstrumentList from './Components/InstrumentList'
 
 export const App = () => {
   return <div>
-      <div className="instrument-list">
+      <div className="outer-container">
         <InstrumentList />
       </div>  
     </div>

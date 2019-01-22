@@ -2,20 +2,22 @@ import React, { Component } from 'react'
 import Instrument from './Instrument'
 import { instruments } from './instruments'
 import Buttons from './Buttons'
+import LCD from './LCD'
 import '../buttons.css'
 
 export class InstrumentList extends Component {
   constructor() {
     super()
-    this.state = { instruments, power: false }
+    this.state = { instruments, power: false, name: null }
   }
 
   onPlay = sound => {
     const onSound = new Audio(sound)
     onSound.play()
   }
-
+  
   handleKeyDown = event => {
+    console.log('pressedInstrument')
     let pressedInstrument = null
 
     this.state.instruments.map(instrument => {
@@ -51,6 +53,7 @@ export class InstrumentList extends Component {
             </div>
           ))}
         </div>
+        <div><LCD /></div>
         <div>
           <Buttons power={power} handlePower={this.handlePower} />
         </div>
