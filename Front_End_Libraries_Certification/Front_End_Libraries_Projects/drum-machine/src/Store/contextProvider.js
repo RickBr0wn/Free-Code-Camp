@@ -5,23 +5,24 @@ import Context from './Context'
 export class contextProvider extends Component {
   constructor(props) {
     super(props)
-    this.state = { instruments, power: false, name: null }
+    this.state = { instruments, power: false, name: '' }
   }
 
-  onPlay = sound => {
+  onPlay = (sound, name) => {
     const onSound = new Audio(sound)
+    this.setState({ name })
     onSound.play()
   }
 
   handleKeyDown = event => {
-    let pressedInstrument = null
+    let instrumentObj = null
     this.state.instruments.map(instrument => {
       const identifier = Object.keys(instrument)
       return instrument[identifier].keyCode === event.keyCode
-        ? (pressedInstrument = instrument[identifier].sound)
+        ? (instrumentObj = instrument[identifier])
         : null
     })
-    this.onPlay(pressedInstrument)
+    this.onPlay(instrumentObj.sound, instrumentObj.name)
   }
 
   componentDidMount() {
@@ -29,7 +30,7 @@ export class contextProvider extends Component {
   }
 
   handlePower = () => {
-    this.setState({ ...this.state, power: !this.state.power })
+    this.setState({ ...this.state, power: !this.state.power, name: '' })
   }
 
   render() {
@@ -39,8 +40,8 @@ export class contextProvider extends Component {
         <Context.Provider
           value={{
             instruments,
-            power: this.power,
-            name: this.name,
+            power: this.state.power,
+            name: this.state.name,
             onPlay: this.onPlay,
             handleKeyDown: this.handleKeyDown,
             handlePower: this.handlePower
