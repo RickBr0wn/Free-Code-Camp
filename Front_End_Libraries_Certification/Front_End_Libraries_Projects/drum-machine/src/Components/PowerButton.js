@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Buttons = ({ power, handlePower }) => {
+const PowerButton = ({ power, handlePower }) => {
   return (
     <div className="button-container">
       <div className="">
@@ -16,4 +16,4 @@ const Buttons = ({ power, handlePower }) => {
   )
 }
 
-export default Buttons
+export default PowerButton

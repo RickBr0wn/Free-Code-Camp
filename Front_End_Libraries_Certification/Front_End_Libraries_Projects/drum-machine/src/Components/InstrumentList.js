@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Instrument from './Instrument'
 import { instruments } from './instruments'
-import Buttons from './Buttons'
+import PowerButton from './PowerButton'
 import LCD from './LCD'
 import '../buttons.css'
 
@@ -55,7 +55,7 @@ export class InstrumentList extends Component {
         </div>
         <div><LCD /></div>
         <div>
-          <Buttons power={power} handlePower={this.handlePower} />
+          <PowerButton power={power} handlePower={this.handlePower} />
         </div>
       </div>
     )
