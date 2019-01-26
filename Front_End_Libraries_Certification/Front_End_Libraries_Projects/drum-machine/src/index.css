@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Lato|Orbitron');
 
 *,
 *::before,
@@ -20,21 +20,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1.2rem;
-  background-color: #060606;
+  background-color: #111111;
   color: #eee;
+  height: 100vh;
+}
+
+.outer-container {
+  border: 3px solid #222;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem;
+  border-radius: 5px;
+  background: #0c0c0c;
 }
 
 .instrument-list {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 105rem;
-  height: 105rem;
+  margin: 1rem auto 1rem auto;
   display: grid;
-  grid-template-columns: 3fr;
-  grid-template-rows: 3fr;
-  grid-gap: 2px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1px;
+  width: 40rem;
 }
 
 .instrument {
@@ -46,20 +53,112 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 2rem;
+  margin: 1.2rem;
   border-radius: 50%;
+  border: 1px solid #333;
+  box-shadow: 0 0 5px #333, 0 0 10px #333 0 0 15px #333, 0 0 20px #333,
+    0 0 0 1px rgba(0, 176, 255, 0.1);
+  transition: all 0.5s;
+}
+
+.instrument-text {
+  color: #afafaf;
+}
+
+.keyboard-letter {
+  transition: all 0.5s;
+  color: #222;
+  font-size: 3.4rem;
+  font-weight: 700;
+}
+
+.letter-power-on {
+  color: rgba(0, 176, 255, 1) !important;
+  transition: all 0.5s;
+}
+
+.power-on {
   border: 1px solid rgba(0, 176, 255, 1);
   box-shadow: 0 0 5px rgba(0, 176, 255, 1), 0 0 10px rgba(0, 176, 255, 1),
     0 0 15px rgba(0, 176, 255, 1), 0 0 20px rgba(0, 176, 255, 1),
     0 0 0 1px rgba(0, 176, 255, 0.1);
 }
 
-.instrument-text {
-  color: #eee;
+.power-button {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#000, #333);
+  border-radius: 50%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.keyboard-letter {
-  color: rgba(0, 176, 255, 1);
-  font-size: 3.4rem;
-  font-weight: 700;
+.power-button-dot {
+  content: '';
+  position: relative;
+  top: -34px;
+  left: 197px;
+  height: 6px;
+  width: 6px;
+  background: #1b1b1b;
+  border-radius: 50%;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.dot-power {
+  background: rgba(0, 176, 255, 1);
+}
+
+.power-button::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: 6px;
+  bottom: 6px;
+  background: #222;
+  border-radius: 50%;
+  z-index: 2;
+  border: 2px solid #161616;
+}
+
+.button-container {
+  margin-top: 2rem;
+}
+
+.icon {
+  position: relative;
+  left: 188px;
+  font-size: 2.4rem;
+  color: #1b1b1b;
+}
+
+.lcd {
+  background: #222;
+  color: #111;
+  height: 4rem;
+  width: 24rem;
+  margin: 0 auto;
+  margin-top: 1.8rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.1rem;
+  transition: all 0.5s;
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000;
+}
+
+.lcd-on {
+  background: rgba(0, 176, 255, 1) !important;
 }
