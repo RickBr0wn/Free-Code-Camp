@@ -14,6 +14,7 @@ class App extends Component {
                 <Calculator
                   display={contextValue.display}
                   sum={contextValue.sum}
+                  currentNumber={contextValue.currentNumber}
                   typeNumber={contextValue.typeNumber}
                 />
               )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Calculator = ({ sum, display, typeNumber }) => {
+const Calculator = ({ sum, display, typeNumber, currentNumber }) => {
   return (
     <div className="container calculator">
       <div className="calc-header">CASIO</div>

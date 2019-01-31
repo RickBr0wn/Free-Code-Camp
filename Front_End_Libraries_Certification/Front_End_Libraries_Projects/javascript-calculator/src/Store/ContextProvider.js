@@ -4,7 +4,7 @@ import Context from './Context'
 export class ContextProvider extends Component {
   constructor(props) {
     super(props)
-    this.state = { sum: '0', display: '0' }
+    this.state = { sum: '0', display: '0', currentNumber: '' }
   }
 
   typeNumber = type => {
@@ -30,27 +30,38 @@ export class ContextProvider extends Component {
       case '+/-':
         return console.log('+/-')
       case '.':
-        return console.log('.')
+        return this.addOperator('.')
       case '=':
+        
         return console.log('=')
       default:
         let sum = this.state.sum + type
         this.setState({
           sum: this.checkForDecimal(sum),
           display: this.checkForDecimal(sum),
+          currentNumber: this.checkForDecimal(sum),
         })
         return
     }
   }
 
-  addOperator = opp => this.setState({ sum: this.state.sum + opp })
+  containsADot = str =>
+    str ? Array.from(str).filter(item => item === '.').length > 0 : null
+
+  addOperator = opp => {
+    if (opp === '.' && this.containsADot(this.state.sum)) {
+      return null
+    } else {
+      this.setState({ sum: this.state.sum + opp })
+    }
+  }
 
   clearDisplay = () => {
-    this.setState({ display: '' })
+    this.setState({ display: '', currentNumber: '' })
   }
 
   clearDisplayAndSum = () => {
-    this.setState({ display: '0', sum: '' })
+    this.setState({ display: '0', sum: '', currentNumber: '' })
   }
 
   checkForDecimal(str) {
@@ -71,6 +82,7 @@ export class ContextProvider extends Component {
           value={{
             sum: this.state.sum,
             display: this.state.display,
+            currentNumber: this.state.currentNumber,
             typeNumber: this.typeNumber,
           }}>
           {this.props.children}
