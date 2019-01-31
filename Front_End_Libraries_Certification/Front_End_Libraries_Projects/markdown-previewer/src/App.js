@@ -47,11 +47,10 @@ export class App extends Component {
         background: '#fff',
         border: '1px solid rgba(0, 0, 0, 0.3)',
         padding: '2rem',
-        overflow: 'hidden',
+
       },
     }
 
-    console.log(marked)
     return (
       <div style={styles.mainContainer}>
         <h1>Markdown Previewer</h1>

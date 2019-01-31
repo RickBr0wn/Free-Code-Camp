@@ -1,11 +1,12 @@
 import React from 'react'
 
-const Calculator = ({ sum, typeNumber }) => {
+const Calculator = ({ sum, display, typeNumber }) => {
   return (
     <div className="container calculator">
       <div className="calc-header">CASIO</div>
       <div className="display-window" id="displayWindow">
-        {sum}
+        <p>{sum ? sum : '0'}</p>
+        {display}
       </div>
       <div className="button-container">
         <button onClick={() => typeNumber('CE')} className="button button-red">
@@ -62,7 +63,7 @@ const Calculator = ({ sum, typeNumber }) => {
         <button onClick={() => typeNumber('0')} className="button">
           0
         </button>
-        <button onClick={() => typeNumber('*')} className="button">
+        <button onClick={() => typeNumber('.')} className="button">
           .
         </button>
         <button onClick={() => typeNumber('=')} className="button">

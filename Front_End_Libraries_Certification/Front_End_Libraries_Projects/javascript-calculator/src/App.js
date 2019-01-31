@@ -12,6 +12,7 @@ class App extends Component {
             {contextValue => {
               return (
                 <Calculator
+                  display={contextValue.display}
                   sum={contextValue.sum}
                   typeNumber={contextValue.typeNumber}
                 />
