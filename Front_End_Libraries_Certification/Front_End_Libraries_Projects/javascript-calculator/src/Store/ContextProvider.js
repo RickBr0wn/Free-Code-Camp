@@ -4,7 +4,7 @@ import Context from './Context'
 export class ContextProvider extends Component {
   constructor(props) {
     super(props)
-    this.state = { sum: '0', display: '0', currentNumber: '' }
+    this.state = { sum: '0', display: '0', currentNumber: '', answer: '0' }
   }
 
   typeNumber = type => {
@@ -20,7 +20,7 @@ export class ContextProvider extends Component {
         return this.addOperator('/')
       case 'X':
         this.clearDisplay()
-        return this.addOperator('X')
+        return this.addOperator('*')
       case '-':
         this.clearDisplay()
         return this.addOperator('-')
@@ -32,14 +32,16 @@ export class ContextProvider extends Component {
       case '.':
         return this.addOperator('.')
       case '=':
-        
+        this.setState({ display: this.state.answer })
         return console.log('=')
       default:
-        let sum = this.state.sum + type
+        const sum = this.state.sum + type
+        let answer = eval(this.checkForDecimal(sum))
         this.setState({
           sum: this.checkForDecimal(sum),
           display: this.checkForDecimal(sum),
           currentNumber: this.checkForDecimal(sum),
+          answer,
         })
         return
     }
@@ -66,7 +68,9 @@ export class ContextProvider extends Component {
 
   checkForDecimal(str) {
     if (typeof str !== 'string')
-      throw new Error('checkForDecimal function has been passed a non-string')
+      throw new Error(
+        'checkForDecimal() has been passed a parameter that is not a string'
+      )
     const arr = str.split('')
     if (arr[0] === '0' && arr[1] !== '*')
       return arr.filter((item, index) => index).join('')
@@ -74,8 +78,9 @@ export class ContextProvider extends Component {
   }
 
   render() {
-    console.log('THIS.SUM: ', this.state.sum)
-    console.log('THIS.DISPLAY: ', this.state.display)
+    console.log('THIS.STATE.SUM: ', this.state.sum)
+    console.log('THIS.STATE.DISPLAY: ', this.state.display)
+    console.log('THIS.STATE.ANSWER: ', this.state.answer)
     return (
       <div>
         <Context.Provider
