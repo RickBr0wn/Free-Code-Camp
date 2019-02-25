@@ -5,9 +5,18 @@ export const App = () => {
   return (
     <StoreWrapper>
       <Store.Consumer>
-        {({ timer, timeNow }) => {
-          const newTime = new Date(timeNow)
-          return console.log(newTime.getSeconds())
+        {({ time, running, startPause, increment, output, reset }) => {
+          return (
+            <div>
+              <div>{output}</div>
+              <div>
+                <button onClick={startPause}>
+                  {running ? 'pause' : 'start'}
+                </button>
+                <button onClick={reset}>reset</button>
+              </div>
+            </div>
+          )
         }}
       </Store.Consumer>
     </StoreWrapper>
