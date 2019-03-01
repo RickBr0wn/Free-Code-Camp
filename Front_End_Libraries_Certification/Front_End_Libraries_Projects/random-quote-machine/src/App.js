@@ -21,15 +21,15 @@ export class App extends Component {
       .then(response => response.json())
       .then(parsedJSON => {
         const { backgroundColors, fontColors } = this.state
-        const quote = this.randomIndex(parsedJSON.quotes.length)
-        const color = this.randomIndex(backgroundColors.length)
+        const quoteIndex = this.randomIndex(parsedJSON.quotes.length)
+        const colorIndex = this.randomIndex(backgroundColors.length)
         this.setState({
           quotes: parsedJSON.quotes,
           hasQuotes: true,
-          currentQuote: parsedJSON.quotes[quote].quote,
-          currentAuthor: parsedJSON.quotes[quote].author,
-          currentBackgroundColor: backgroundColors[color],
-          currentFontColor: fontColors[color],
+          currentQuote: parsedJSON.quotes[quoteIndex].quote,
+          currentAuthor: parsedJSON.quotes[quoteIndex].author,
+          currentBackgroundColor: backgroundColors[colorIndex],
+          currentFontColor: fontColors[colorIndex],
         })
       })
       .catch(error => console.log(error))
@@ -109,7 +109,7 @@ export class App extends Component {
     }
 
     return (
-      <div>
+      <div id="quote-box">
         {hasQuotes && (
           <div style={stylesObj.container}>
             <div id="quote-box" style={stylesObj.quoteBox}>
