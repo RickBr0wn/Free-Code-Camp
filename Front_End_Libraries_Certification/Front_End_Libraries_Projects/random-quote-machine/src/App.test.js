@@ -12,8 +12,12 @@ describe('<App /> shallow rendering', () => {
     ReactDOM.render(<App />, div)
     ReactDOM.unmountComponentAtNode(div)
   })
-  it('should contain only one <div> with and id of `quote-box`', () => {
+  it('should contain a <div> with an id of "quote-box"', () => {
     const wrapper = shallow(<App />)
-    expect(wrapper.find('#quote-box')).to.have.lengthOf(1)
+    expect(wrapper.find('#quote-box').exists()).toBe(true)
+  })
+  it('should contain a an element with a corresponding id="text"', () => {
+    const wrapper = shallow(<App />)
+    expect(wrapper.find('#text').exists()).toBe(true)
   })
 })

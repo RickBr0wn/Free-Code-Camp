@@ -5,7 +5,12 @@ export const Store = createContext()
 export class StoreWrapper extends Component {
   constructor(props) {
     super(props)
-    this.state = { time: 0, running: false, output: '0:00:00:00' }
+    this.state = {
+      time: 0,
+      running: false,
+      output: '0:00:00:00',
+      timeRequired: 0
+    }
   }
 
   checkForZero = num => {
@@ -52,6 +57,9 @@ export class StoreWrapper extends Component {
     this.setState({ running: false, time: 0, output: '0:00:00:00' })
   }
 
+  // TODO : logic for entering required timer length
+  textBoxChange = event => null
+
   render() {
     return (
       <Store.Provider
@@ -61,7 +69,9 @@ export class StoreWrapper extends Component {
           startPause: this.startPause,
           increment: this.increment,
           reset: this.reset,
-          output: this.state.output
+          output: this.state.output,
+          textBoxChange: this.textBoxChange,
+          timeRequired: this.state.timeRequired
         }}>
         {this.props.children}
       </Store.Provider>
