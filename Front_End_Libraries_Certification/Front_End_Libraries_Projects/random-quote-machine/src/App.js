@@ -9,10 +9,10 @@ export class App extends Component {
       hasQuotes: false,
       backgroundColors,
       fontColors,
-      currentQuote: null,
-      currentAuthor: null,
-      currentBackgroundColor: '#59A96A',
-      currentFontColor: '#fff',
+      activeQuote: null,
+      activeAuthor: null,
+      activeBackgroundColor: '#59A96A',
+      activeFontColor: '#fff',
     }
   }
 
@@ -26,10 +26,10 @@ export class App extends Component {
         this.setState({
           quotes: parsedJSON.quotes,
           hasQuotes: true,
-          currentQuote: parsedJSON.quotes[quoteIndex].quote,
-          currentAuthor: parsedJSON.quotes[quoteIndex].author,
-          currentBackgroundColor: backgroundColors[colorIndex],
-          currentFontColor: fontColors[colorIndex],
+          activeQuote: parsedJSON.quotes[quoteIndex].quote,
+          activeAuthor: parsedJSON.quotes[quoteIndex].author,
+          activeBackgroundColor: backgroundColors[colorIndex],
+          activeFontColor: fontColors[colorIndex],
         })
       })
       .catch(error => console.log(error))
@@ -43,20 +43,20 @@ export class App extends Component {
     const colorsIndex = this.randomIndex(backgroundColors.length)
     this.setState({
       ...this.state,
-      currentQuote: quotes[quotesIndex].quote,
-      currentAuthor: quotes[quotesIndex].author,
-      currentBackgroundColor: backgroundColors[colorsIndex],
-      currentFontColor: fontColors[colorsIndex],
+      activeQuote: quotes[quotesIndex].quote,
+      activeAuthor: quotes[quotesIndex].author,
+      activeBackgroundColor: backgroundColors[colorsIndex],
+      activeFontColor: fontColors[colorsIndex],
     })
   }
 
-  tweetQuote = currentQuote => {
+  tweetQuote = activeQuote => {
     const url = 'https://github.com/RickBr0wn'
     window.open(
       'http://twitter.com/share?url=' +
         encodeURIComponent(url) +
         '&text=' +
-        encodeURIComponent(currentQuote)
+        encodeURIComponent(activeQuote)
     )
   }
 
@@ -67,16 +67,16 @@ export class App extends Component {
   render() {
     const {
       hasQuotes,
-      currentQuote,
-      currentAuthor,
-      currentBackgroundColor,
-      currentFontColor,
+      activeQuote,
+      activeAuthor,
+      activeBackgroundColor,
+      activeFontColor,
     } = this.state
 
     const stylesObj = {
       container: {
-        background: currentBackgroundColor,
-        color: currentFontColor,
+        background: activeBackgroundColor,
+        color: activeFontColor,
         height: '100vh',
         width: '100vw',
         display: 'flex',
@@ -101,7 +101,7 @@ export class App extends Component {
       },
       buttonContainer: {
         width: '10rem',
-        color: currentFontColor,
+        color: activeFontColor,
         display: 'flex',
         justifyContent: 'space-around',
         fontSize: '2rem',
@@ -114,10 +114,10 @@ export class App extends Component {
           <div style={stylesObj.container}>
             <div id="quote-box" style={stylesObj.quoteBox}>
               <div id="text" style={stylesObj.quoteText}>
-                {currentQuote}
+                {activeQuote}
               </div>
               <div id="author" style={stylesObj.quoteAuthor}>
-                {currentAuthor}
+                {activeAuthor}
               </div>
             </div>
             <div style={stylesObj.buttonContainer}>
@@ -126,7 +126,7 @@ export class App extends Component {
               </div>
               <div
                 id="tweet-quote"
-                onClick={() => this.tweetQuote(currentQuote, currentAuthor)}>
+                onClick={() => this.tweetQuote(activeQuote, activeAuthor)}>
                 <i className="fab fa-twitter" />
               </div>
             </div>
