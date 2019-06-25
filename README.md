@@ -1,3 +1,12 @@
+# TODO:
+  - [ ] Add tests to markdown-previewer
+  - [ ] Check logic on javascript calculator
+  - [ ] Add tests to javascript calculator
+  - [ ] Add tests to drum machine
+  - [ ] Complete pomodoro-clock
+  - [ ] Add tests to pomodoro-clock
+  - [ ] Add test to random quote machine
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/RickBr0wn/Free-Code-Camp/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
