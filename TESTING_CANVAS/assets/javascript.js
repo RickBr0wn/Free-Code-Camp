@@ -11,12 +11,13 @@ let y = randomNumber(height)
 const RIGHT = 'RIGHT'
 const LEFT = 'LEFT'
 
+// The Bubble Class
 class Bubble {
   constructor(x, y, radius) {
     this.x = x
     this.y = y
     this.radius = radius
-    this.velocity = 2
+    this.velocity = 4
     this.direction = LEFT
   }
 
@@ -28,18 +29,22 @@ class Bubble {
   }
 
   update() {
-    if (this.direction === RIGHT) {
-      this.x += this.velocity
-    } else if (this.direction === LEFT) {
-      this.x -= this.velocity
-    }
+    this.y += this.velocity
+    this.x += this.velocity
   }
 
   collision() {
-    if (this.x > width - this.radius / 2) {
-      this.direction = LEFT
-    } else if (this.x < 0 + this.radius / 2) {
-      this.direction = RIGHT
+    if (this.x > width - this.radius) {
+      this.velocity = -4
+    }
+    if (this.y > height - this.radius) {
+      this.velocity = -4
+    }
+    if (this.x < 0 + this.radius) {
+      this.velocity = 4
+    }
+    if (this.y < 0 + this.radius) {
+      this.velocity = 4
     }
   }
 }
